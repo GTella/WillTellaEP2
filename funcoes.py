@@ -1,3 +1,5 @@
+#CONCEITO C
+
 def define_posicoes(dados_de_posicionamento):
     linha = dados_de_posicionamento["linha"]
     coluna = dados_de_posicionamento["coluna"]
@@ -16,7 +18,7 @@ def define_posicoes(dados_de_posicionamento):
 
     return posicoes
 
-
+#CONCEITO B
 
 def posiciona_frota(navios):
     grid_jogo = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -30,7 +32,6 @@ def posiciona_frota(navios):
   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
     
-
     for navio in navios:
         for pos in navio["posicoes"]:
             linha, coluna = pos
@@ -43,15 +44,13 @@ def afundados(navios, grid_jogo):
 
     for navio in navios:
         afundado = True
-
         for posicao in navio["posicoes"]:
             linha, coluna = posicao
-
-            if grid_jogo[linha][coluna] != 'X':
+        if grid_jogo[linha][coluna] != 'X':
                 afundado = False
-
-
         if afundado:
             n_afundados += 1
 
     return n_afundados
+
+#CONCEITO A
