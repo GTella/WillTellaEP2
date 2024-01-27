@@ -18,6 +18,23 @@ def define_posicoes(dados_de_posicionamento):
 
     return posicoes
 
+def preenche_frota(dados_de_posicionamento, nome_navio, frota):
+    tipo_embarcacao = nome_navio
+    posicoes = define_posicoes(dados_de_posicionamento)
+
+    novo_navio = {"tipo": tipo_embarcacao, "posicoes": posicoes}
+    frota.append(novo_navio)
+
+    return frota
+
+def faz_jogada(tabuleiro, linha, coluna):
+    if tabuleiro[linha][coluna] == 1:
+        tabuleiro[linha][coluna] = 'X'
+    else:
+        tabuleiro[linha][coluna] = '-'
+
+    return tabuleiro
+
 #CONCEITO B
 
 def posiciona_frota(navios):
