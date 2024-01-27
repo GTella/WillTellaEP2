@@ -37,3 +37,21 @@ def posiciona_frota(navios):
             grid_jogo[linha][coluna] = 1
 
     return grid_jogo
+
+def afundados(navios, grid_jogo):
+    n_afundados = 0
+
+    for navio in navios:
+        afundado = True
+
+        for posicao in navio["posicoes"]:
+            linha, coluna = posicao
+
+            if grid_jogo[linha][coluna] != 'X':
+                afundado = False
+
+
+        if afundado:
+            n_afundados += 1
+
+    return n_afundados
