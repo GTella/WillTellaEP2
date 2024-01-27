@@ -15,3 +15,25 @@ def define_posicoes(dados_de_posicionamento):
             posicoes.append([linha, d])
 
     return posicoes
+
+
+
+def posiciona_frota(navios):
+    grid_jogo = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
+    
+
+    for navio in navios:
+        for pos in navio["posicoes"]:
+            linha, coluna = pos
+            grid_jogo[linha][coluna] = 1
+
+    return grid_jogo
