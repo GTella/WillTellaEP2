@@ -1,10 +1,10 @@
 #CONCEITO C
 
-def define_posicoes(dados_de_posicionamento):
-    linha = dados_de_posicionamento["linha"]
-    coluna = dados_de_posicionamento["coluna"]
-    orientacao = dados_de_posicionamento["orientacao"]
-    tamanho = dados_de_posicionamento["tamanho"]
+def define_posicoes(posicionamento):
+    linha = posicionamento["linha"]
+    coluna = posicionamento["coluna"]
+    orientacao = posicionamento["orientacao"]
+    tamanho = posicionamento["tamanho"]
 
     posicoes = []
 
@@ -18,22 +18,22 @@ def define_posicoes(dados_de_posicionamento):
 
     return posicoes
 
-def preenche_frota(dados_de_posicionamento, nome_navio, frota):
-    tipo_embarcacao = nome_navio
-    posicoes = define_posicoes(dados_de_posicionamento)
+def preenche_frota(posicionamento, nome_navio, navios):
+    tipo_navio = nome_navio
+    posicoes = define_posicoes(posicionamento)
 
-    novo_navio = {"tipo": tipo_embarcacao, "posicoes": posicoes}
-    frota.append(novo_navio)
+    novo_navio = {"tipo": tipo_navio, "posicoes": posicoes}
+    navios.append(novo_navio)
 
-    return frota
+    return navios
 
-def faz_jogada(tabuleiro, linha, coluna):
-    if tabuleiro[linha][coluna] == 1:
-        tabuleiro[linha][coluna] = 'X'
+def faz_jogada(grid_jogo, linha, coluna):
+    if grid_jogo[linha][coluna] == 1:
+        grid_jogo[linha][coluna] = 'X'
     else:
-        tabuleiro[linha][coluna] = '-'
+        grid_jogo[linha][coluna] = '-'
 
-    return tabuleiro
+    return grid_jogo
 
 #CONCEITO B
 
