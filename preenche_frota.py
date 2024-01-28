@@ -16,5 +16,11 @@ def define_posicoes(dados_de_posicionamento):
 
     return posicoes
     
-def preenche_frota(dados_de_posicionamento, nome_do_navio, lista_de_informacoes):
-    nome_navio = nome_do_navio
+def preenche_frota(dados_de_posicionamento, nome_navio, frota):
+    tipo_embarcacao = nome_navio
+    posicoes = define_posicoes(dados_de_posicionamento)
+
+    novo_navio = {"tipo": tipo_embarcacao, "posicoes": posicoes}
+    frota.append(novo_navio)
+
+    return frota
